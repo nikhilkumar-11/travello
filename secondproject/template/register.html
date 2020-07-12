@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+    </head>
+    <body>
+        <form action="register" method="POST">
+            {% csrf_token %}
+            <input type="text" name="first_name" placeholder="First Name"><br>
+            <input type="text" name="last_name" placeholder="Last Name"><br>
+            <input type="text" name="user_name" placeholder="User Name"><br>
+            <input type="email" name="email" placeholder="email"><br>
+            <input type="password" name="password1" placeholder="Password"><br>
+            <input type="password" name="password2" placeholder="Confirm Password"><br>
+            <input type="submit" name="Submit" placeholder="Submit">
+        </form>
+        <div>
+            <h3>
+                
+                {% for message in messages %}
+                {{message}}
+                {% endfor %}
+            </h3>
+        </div>
+        <div>
+            <a href='http://localhost:8000/travello/'>
+            <button class="GFG">
+                Return Home
+            </button>
+            </a>
+        </div>
+    </body>
+</html>
